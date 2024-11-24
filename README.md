@@ -6,7 +6,7 @@ This is a simple university management application that allows users to manage s
 
 ### Project Structure
 
-```
+```css
 📦phum-client
  ┣ 📂public
  ┃ ┗ 📜vite.svg

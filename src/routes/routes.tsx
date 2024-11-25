@@ -1,53 +1,34 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import About from "../pages/About";
-import StudentDashboard from "../pages/student/StudentDashboard";
-import AdminLayout from "../components/layout/AdminLayout";
-import AdminDashboard from "../pages/admin/AdminDashboard";
+import adminPaths from "./admin.routes";
+import routesGenerator from "../utils/routesGenerator";
+import authPaths from "./auth.routes";
 
 const router = createBrowserRouter([
  {
   path: "/",
   element: <App />,
-  children: [
-   {
-    index: true,
-    element: <StudentDashboard />,
-   },
-   {
-    path: "dashboard",
-    element: <StudentDashboard />,
-   },
-   {
-    path: "about",
-    element: <About />,
-   },
-  ]
  },
  {
   path: "/admin",
-  element: <AdminLayout />,
-  children: [
-   {
-    index: true,
-    element: <AdminDashboard />,
-   },
-   {
-    path: "about",
-    element: <About />,
-   },
-  ]
+  element: <App />,
+  children: routesGenerator(adminPaths)
  },
  {
-  path: "/auth/login",
-  element: <Login />,
+  path: "/faculty",
+  element: <App />,
+  children: routesGenerator(adminPaths)
  },
  {
-  path: "/auth/register",
-  element: <Register />,
+  path: "/student",
+  element: <App />,
+  children: routesGenerator(adminPaths)
  },
+ {
+  path: "/auth",
+  element: <App />,
+  children: routesGenerator(authPaths)
+ }
 ])
 
 export default router

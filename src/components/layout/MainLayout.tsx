@@ -1,44 +1,8 @@
-import { createElement } from "react";
-import { Layout, Menu, MenuProps } from "antd";
-import { DashboardOutlined, ProfileOutlined, SettingOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { Layout, Menu } from "antd";
 import { Outlet } from "react-router-dom";
+import { adminSidebarItems } from "../../routes/admin.routes";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-const items: MenuProps['items'] = [
- {
-  key: '1',
-  icon: createElement(DashboardOutlined),
-  label: 'Dashboard',
- },
- {
-  key: '2',
-  icon: createElement(ProfileOutlined),
-  label: 'Profile',
- },
- {
-  key: '3',
-  icon: createElement(SettingOutlined),
-  label: 'Settings',
-  children: [
-   {
-    key: '3-1',
-    icon: createElement(UserOutlined),
-    label: 'Account',
-   },
-   {
-    key: '3-2',
-    icon: createElement(VideoCameraOutlined),
-    label: 'Video',
-   },
-   {
-    key: '3-3',
-    icon: createElement(UploadOutlined),
-    label: 'Upload',
-   }
-  ]
- }
-]
 
 
 const MainLayout = () => {
@@ -57,7 +21,7 @@ const MainLayout = () => {
     <div className="demo-logo-vertical" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10%' }}>
      <h1 style={{ color: 'white' }}>PHUM</h1>
     </div>
-    <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+    <Menu theme="dark" mode="inline"  items={adminSidebarItems} />
    </Sider>
    <Layout>
     <Header style={{ padding: 0 }} />

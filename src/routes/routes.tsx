@@ -31,4 +31,7 @@ const router = createBrowserRouter([
  }
 ])
 
+console.log(routesGenerator(adminPaths));
+
+
 export default router

@@ -21,7 +21,7 @@ const MainLayout = () => {
     <div className="demo-logo-vertical" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10%' }}>
      <h1 style={{ color: 'white' }}>PHUM</h1>
     </div>
-    <Menu theme="dark" mode="inline"  items={adminSidebarItems} />
+    <Menu theme="dark" mode="inline" items={adminSidebarItems} />
    </Sider>
    <Layout>
     <Header style={{ padding: 0 }} />

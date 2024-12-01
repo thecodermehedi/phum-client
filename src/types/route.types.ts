@@ -6,14 +6,8 @@ export type TRoute = {
  children?: TRoute[]
 }
 
-export type TSideItem = {
- key: string,
- label: ReactNode,
- children?: TSideItem[]
-}
-
 export type TPath = {
- name?: string,
+ name: string,
  path?: string,
  element?: ReactNode,
  children?: TPath[]

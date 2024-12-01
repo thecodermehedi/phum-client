@@ -1,4 +1,4 @@
-import { TPath, TRoute } from "../types/route";
+import { TPath, TRoute } from "../types"
 
 const routesGenerator = (routes: TPath[]) => {
  return routes.reduce((accumulator: TRoute[], currentRouteObject) => {

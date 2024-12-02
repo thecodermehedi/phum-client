@@ -28,7 +28,6 @@ const router = createBrowserRouter([
  },
  {
   path: "/auth",
-  element: <App />,
   children: routesGenerator(authPaths)
  }
 ])

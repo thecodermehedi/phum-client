@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./featues/auth/authSlice";
+import authReducer from "./features/auth/authSlice";
 import { baseApi } from "./api/baseApi";
 import {
  persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER

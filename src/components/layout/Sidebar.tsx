@@ -5,7 +5,7 @@ import { userRoles } from "../../types";
 import facultyPaths from "../../routes/faculty.routes";
 import studentPaths from "../../routes/student.routes";
 import { useAppSelector } from "../../redux/hook";
-import { selectCurrentUser } from "../../redux/featues/auth/authSlice";
+import { selectCurrentUser } from "../../redux/features/auth/authSlice";
 
 const Sidebar = () => {
  const role = useAppSelector(selectCurrentUser)!.role;

@@ -1,6 +1,6 @@
 import { Button, Layout } from "antd";
 import { useAppDispatch } from "../../redux/hook";
-import { logout } from "../../redux/featues/auth/authSlice";
+import { logout } from "../../redux/features/auth/authSlice";
 
 const Navbar = () => {
  const dispatch = useAppDispatch();

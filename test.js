@@ -1,50 +1,50 @@
-const inputRoutes = [
- {
-  name: "Dashboard",
-  path: "dashboard",
-  element: "ADMIND_ASHBOARD",
- },
- {
-  name: "User Management",
-  children: [
-   {
-    name: "Create Admin",
-    path: "create-admin",
-    element: "CREATE_ADMIN",
-   },
-   {
-    name: "Create Faculty",
-    path: "create-faculty",
-    element: "CREATE_FACULTY",
-   },
-   {
-    name: "Create Student",
-    path: "create-student",
-    element: "CREATE_STUDENT",
-   },
-  ],
- }
-]
+// const inputRoutes = [
+//  {
+//   name: "Dashboard",
+//   path: "dashboard",
+//   element: "ADMIND_ASHBOARD",
+//  },
+//  {
+//   name: "User Management",
+//   children: [
+//    {
+//     name: "Create Admin",
+//     path: "create-admin",
+//     element: "CREATE_ADMIN",
+//    },
+//    {
+//     name: "Create Faculty",
+//     path: "create-faculty",
+//     element: "CREATE_FACULTY",
+//    },
+//    {
+//     name: "Create Student",
+//     path: "create-student",
+//     element: "CREATE_STUDENT",
+//    },
+//   ],
+//  }
+// ]
 
-const OutputRoutesLogic = inputRoutes.reduce((acc, item) => {
- if (item.path && item.element) {
-  acc.push(
-   { path: item.path, element: item.element }
-  )
- }
- if (item.children) {
-  item.children.forEach((child) => {
-   if (child.path && child.element) {
-    acc.push(
-     { path: child.path, element: child.element }
-    )
-   }
-  })
- }
- return acc
-}, [])
+// const OutputRoutesLogic = inputRoutes.reduce((acc, item) => {
+//  if (item.path && item.element) {
+//   acc.push(
+//    { path: item.path, element: item.element }
+//   )
+//  }
+//  if (item.children) {
+//   item.children.forEach((child) => {
+//    if (child.path && child.element) {
+//     acc.push(
+//      { path: child.path, element: child.element }
+//     )
+//    }
+//   })
+//  }
+//  return acc
+// }, [])
 
-console.log(OutputRoutesLogic);
+// console.log(OutputRoutesLogic);
 
 /*
 [
@@ -64,21 +64,21 @@ console.log(OutputRoutesLogic);
 ]
 */
 
-const OutputSideBarLogic = inputRoutes.reduce((acc, item) => {
- if (item.path && item.element) {
-  acc.push(
-   { key: item.name, label: item.path }
-  )
- }
- if (item.children) {
-  acc.push(
-   { key: item.name, label: item.name, children: item.children.map(child => ({ key: child.name, label: child.path })) }
-  )
- }
- return acc
-}, [])
+// const OutputSideBarLogic = inputRoutes.reduce((acc, item) => {
+//  if (item.path && item.element) {
+//   acc.push(
+//    { key: item.name, label: item.path }
+//   )
+//  }
+//  if (item.children) {
+//   acc.push(
+//    { key: item.name, label: item.name, children: item.children.map(child => ({ key: child.name, label: child.path })) }
+//   )
+//  }
+//  return acc
+// }, [])
 
-console.log(JSON.stringify(OutputSideBarLogic));
+// console.log(JSON.stringify(OutputSideBarLogic));
 
 
 /*
@@ -106,3 +106,19 @@ console.log(JSON.stringify(OutputSideBarLogic));
   }
 ]
 */
+
+//! This is a non-serialized object (data) , where there is chance of data loss, if you use JSON.stringify on it, you will lose the method called greet.
+const obj = {
+ name: "Dashboard",
+ role: "admin",
+ age: 30,
+ address: {
+  city: "New York",
+  state: "NY",
+  zip: "10001",
+ },
+ greet: () => console.log("Hello"),
+};
+
+console.log(JSON.stringify(obj));
+

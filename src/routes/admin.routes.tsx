@@ -1,3 +1,5 @@
+import AcademicSemesters from "../pages/admin/academicSemester/AcademicSemesters";
+import CreateAcademicSemester from "../pages/admin/academicSemester/CreateAcademicSemester";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
@@ -28,7 +30,23 @@ const adminPaths = [
     element: <CreateAdmin />,
    },
   ]
- }
+ },
+ {
+  name: "Academic Semester Management",
+  children: [
+   {
+    name: "Academic Semesters",
+    path: "academic-semesters",
+    element: <AcademicSemesters />,
+   },
+   {
+    name: "Create Academic Semester",
+    path: "create-academic-semester",
+    element: <CreateAcademicSemester />,
+   },
+
+  ]
+ },
 ]
 
 export default adminPaths

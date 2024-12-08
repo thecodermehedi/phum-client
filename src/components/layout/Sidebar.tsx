@@ -4,12 +4,17 @@ import adminPaths from "../../routes/admin.routes";
 import { userRoles } from "../../types";
 import facultyPaths from "../../routes/faculty.routes";
 import studentPaths from "../../routes/student.routes";
+import { useAppSelector } from "../../redux/hook";
+import { selectCurrentUser } from "../../redux/featues/auth/authSlice";
 
 const Sidebar = () => {
- const role = 'admin';
+ const role = useAppSelector(selectCurrentUser)!.role;
  let sidebarItems;
 
  switch (role) {
+  case userRoles.SUPERADMIN:
+   sidebarItems = sidebarItemsGenerator(adminPaths, userRoles.SUPERADMIN);
+   break;
   case userRoles.ADMIN:
    sidebarItems = sidebarItemsGenerator(adminPaths, userRoles.ADMIN);
    break;
@@ -25,11 +30,12 @@ const Sidebar = () => {
 
  return (
   <Layout.Sider
+   width={280}
    breakpoint="lg"
    collapsedWidth="0"
-   onBreakpoint={(broken) => {
-    console.log(broken);
-   }}
+   // onBreakpoint={(broken) => {
+   //  console.log(broken);
+   // }}
    onCollapse={(collapsed, type) => {
     console.log(collapsed, type);
    }}
